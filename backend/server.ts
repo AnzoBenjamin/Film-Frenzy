@@ -1,23 +1,23 @@
-import { isJSDocAugmentsTag } from "typescript";
+const express = require("express");
+const cors = require("cors");
+const IndexRoute = require("./routes/index");
+const MoviesRoute = require("./routes/movies");
+const TVRoute = require("./routes/tv");
+const TrailerRoute = require("./routes/trailers");
+const SearchRoute = require("./routes/search");
 
-const express = require('express');
-const axios = require('axios');
-require('dotenv').config();
-
-const {MediaContent , MediaType} = require('./types');
+require("dotenv").config();
 
 const port = 3000;
 const app = express();
-const BASE_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`;
+app.use(cors());
+app.use(express.json());
+app.use("/", IndexRoute);
+app.use("/movies", MoviesRoute);
+app.use("/tv", TVRoute);
+app.use("/trailers", TrailerRoute);
+app.use("/search", SearchRoute);
 
-app.get('/',async () => {
-    const response = await axios.get(BASE_URL);
-    const results = response.data.results;
-    console.log(results);
-}
-)
-
-app.listen(port, ()=>{
-    console.log("Server listening on port: "+port)
-})
-
+app.listen(port, () => {
+  console.log("Server listening on port: " + port);
+});
