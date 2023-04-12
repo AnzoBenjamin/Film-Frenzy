@@ -1,6 +1,10 @@
 import React from 'react'
 
-const TrailerContainer = ({trailer, title}) => {
+interface Props{
+  trailer: any,
+  title: string
+}
+const TrailerContainer: React.FC<Props> = ({trailer, title}) => {
   return (
     <figure className='trailer-container'>
             <iframe

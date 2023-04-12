@@ -2,7 +2,15 @@ import React, { useEffect } from "react";
 import TrailerContainer from "./TrailerContainer";
 import Spinner from "../Spinner";
 import { motion } from "framer-motion";
-const TrailerSection = ({ trailers, fetchTrailers, media, loading }) => {
+
+interface Props{
+  trailers: string[];
+  fetchTrailers: () => void;
+  media: any,
+  loading: boolean
+}
+const TrailerSection: React.FC<Props>
+= ({ trailers, fetchTrailers, media, loading }) => {
   useEffect(() => {
     if (media.length > 0) {
       fetchTrailers();

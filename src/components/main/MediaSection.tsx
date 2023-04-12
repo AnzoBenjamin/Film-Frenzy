@@ -4,8 +4,25 @@ import { motion } from "framer-motion";
 import Spinner from "../Spinner";
 import MediaContainer from "./MediaContainer";
 
-const MediaSection = ({ loading, media, fetchMedia, selectedMedia, setSelectedMedia, selectedParameter, setSelectedParameter}) => {
+interface Props {
+  loading: boolean;
+  media: string[];
+  fetchMedia: (url: string) => void;
+  selectedMedia: string;
+  setSelectedMedia: (media: string) => void;
+  selectedParameter: string;
+  setSelectedParameter: (parameter: string) => void;
+}
 
+const MediaSection: React.FC<Props> = ({
+  loading,
+  media,
+  fetchMedia,
+  selectedMedia,
+  setSelectedMedia,
+  selectedParameter,
+  setSelectedParameter,
+}) => {
   const spinnerVariants = {
     loading: {
       opacity: 1,

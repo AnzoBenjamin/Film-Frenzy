@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const SearchArea = () => {
   const [query, setQuery] = useState('');
-  const formHandler = (e) => {
+  const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    
+
   };
-  const inputHandler = (e) => {
+  const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
   return (
