@@ -2,7 +2,7 @@
 /*Only add imports here*/
 /*Fonts*/
 /*Colors*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+JP&family=Source+Serif+Pro&display=swap");
 @keyframes primary-heading {
   0% {
     opacity: 0;
@@ -111,6 +111,10 @@ ul {
 
 body {
   font-family: "Inter", sans-serif;
+}
+
+:lang(jp) {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .primary-heading {

@@ -36,7 +36,7 @@ router.post('/tv', (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const response = req.body;
         const searchTerm = response.query;
-        const request = yield axios_1.default.get(`${baseUrl}search/tv?api_key=${apiKey}${language}query=${searchTerm}${page}`);
+        const request = yield axios_1.default.get(`${baseUrl}search/tv?api_key=${apiKey}${language}&query=${searchTerm}${page}`);
         const data = request.data.results;
         res.json(data);
     }

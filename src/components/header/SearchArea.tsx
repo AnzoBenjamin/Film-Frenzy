@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SearchArea = () => {
+  const [query, setQuery] = useState('');
+  const formHandler = (e) => {
+    e.preventDefault();
+
+    
+  };
+  const inputHandler = (e) => {
+    setQuery(e.target.value);
+  };
   return (
     <div className="header__links">
       <div>
         <label htmlFor="search-query" className="header__links--label">
           <img src="/search.svg" />
         </label>
-        <input
-          type="text"
-          id="search-query"
-          placeholder="Search"
-          className="header__links--search"
-        />
+        <form onSubmit={formHandler}>
+          <input
+            type="text"
+            id="search-query"
+            placeholder="Search"
+            className="header__links--search"
+            onChange={inputHandler}
+          />
+        </form>
       </div>
 
       <div className="header__icon-container">

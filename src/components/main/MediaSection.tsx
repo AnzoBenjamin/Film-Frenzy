@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import Spinner from "../Spinner";
 import MediaContainer from "./MediaContainer";
 
-const MediaSection = ({ loading, media, fetchMedia}) => {
-  const [selectedParameter, setSelectedParameter] = useState("1");
-  const [selectedMedia, setSelectedMedia] = useState("1");
+const MediaSection = ({ loading, media, fetchMedia, selectedMedia, setSelectedMedia, selectedParameter, setSelectedParameter}) => {
+
   const spinnerVariants = {
     loading: {
       opacity: 1,

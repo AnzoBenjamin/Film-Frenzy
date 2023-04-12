@@ -7,7 +7,8 @@ const Main = () => {
   const [mediaLoading, setMediaLoading] = useState(true);
   const [trailerLoading, setTrailerLoading] = useState(true);
   const [trailers, setTrailers] = useState([]);
-
+  const [selectedParameter, setSelectedParameter] = useState("1");
+  const [selectedMedia, setSelectedMedia] = useState("1");
   async function fetchMedia(url: string) {
     setMediaLoading(true);
     try {
@@ -23,10 +24,18 @@ const Main = () => {
   async function fetchTrailers() {
     setTrailerLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/trailers", media);
-      const trailerUrls = await res.data;
-      setTrailers(trailerUrls);
-      setTrailerLoading(false);
+      if(selectedMedia==="1"){
+        const res = await axios.post("http://localhost:3000/trailers/movies", media);
+        const trailerUrls = await res.data;
+        setTrailers(trailerUrls);
+        setTrailerLoading(false);
+      }
+      else{
+        const res = await axios.post("http://localhost:3000/trailers/tv", media);
+        const trailerUrls = await res.data;
+        setTrailers(trailerUrls);
+        setTrailerLoading(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -43,6 +52,10 @@ const Main = () => {
           loading={mediaLoading}
           media={media}
           fetchMedia={fetchMedia}
+          selectedMedia={selectedMedia}
+          setSelectedMedia={setSelectedMedia}
+          selectedParameter={selectedParameter}
+          setSelectedParameter={setSelectedParameter}
         />
         <TrailerSection
           loading={trailerLoading}
