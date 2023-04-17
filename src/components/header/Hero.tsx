@@ -12,12 +12,7 @@ const Hero = () => {
             Discover the best movies with film frenzy
           </h2>
         </div>
-        <div className="section-hero__btn-area">
-          <a href="#" className="btn btn-trending">Trending</a>
-          <a href="#" className="btn btn-popular">Popular</a>
-          <a href="#" className="btn btn-trailers">Recent Trailers</a>
-        </div>
-  </section>;
+ </section>
 };
 
 export default Hero;
