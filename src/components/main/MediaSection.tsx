@@ -60,15 +60,15 @@ const MediaSection: React.FC<Props> = ({
   useEffect(() => {
     if (selectedMedia === "1") {
       if (selectedParameter === "1") {
-        fetchMedia("http://localhost:3000/movies/trending");
+        fetchMedia("https://film-frenzy.onrender.com/movies/trending");
       } else {
-        fetchMedia("http://localhost:3000/movies/popular");
+        fetchMedia("https://film-frenzy.onrender.com/movies/popular");
       }
     } else {
       if (selectedParameter === "1") {
-        fetchMedia("http://localhost:3000/tv/trending");
+        fetchMedia("https://film-frenzy.onrender.com/trending");
       } else {
-        fetchMedia("http://localhost:3000/tv/popular");
+        fetchMedia("https://film-frenzy.onrender.com/popular");
       }
     }
   }, [selectedParameter, selectedMedia]);

@@ -25,13 +25,13 @@ const Main = () => {
     setTrailerLoading(true);
     try {
       if(selectedMedia==="1"){
-        const res = await axios.post("http://localhost:3000/trailers/movies", media);
+        const res = await axios.post("https://film-frenzy.onrender.com/trailers/movies", media);
         const trailerUrls = await res.data;
         setTrailers(trailerUrls);
         setTrailerLoading(false);
       }
       else{
-        const res = await axios.post("http://localhost:3000/trailers/tv", media);
+        const res = await axios.post("https://film-frenzy.onrender.com/trailers/tv", media);
         const trailerUrls = await res.data;
         setTrailers(trailerUrls);
         setTrailerLoading(false);
@@ -42,7 +42,7 @@ const Main = () => {
   }
 
   useEffect(() => {
-    fetchMedia("http://localhost:3000/");
+    fetchMedia("https://film-frenzy.onrender.com/");
   }, []);
   return (
     <div>
