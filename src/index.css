@@ -579,12 +579,12 @@ body {
     width: 100%;
   }
 }
-@media (max-width: 76.25em) {
+@media (min-width: 76.25em) {
   .display {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 50em) {
+@media (min-width: 50em) {
   .display {
     grid-template-columns: 1fr;
   }
